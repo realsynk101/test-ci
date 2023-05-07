@@ -1,5 +1,5 @@
 steps:
   - name: gcr.io/cloud-builders/docker
-    args: ['build', '-t', 'gcr.io/test-ci/My First Project:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/test-ci/e-analogy-384607:$COMMIT_SHA', '.']
   - name: gcr.io/cloud-builders/docker
-    args: ['push', 'gcr.io/test-ci/My First Project:$COMMIT_SHA']
+    args: ['push', 'gcr.io/test-ci/e-analogy-384607:$COMMIT_SHA']
