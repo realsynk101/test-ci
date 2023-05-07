@@ -3,3 +3,5 @@ steps:
     args: ['build', '-t', 'gcr.io/e-analogy-384607/test-ci:$COMMIT_SHA', '.']
   - name: gcr.io/cloud-builders/docker
     args: ['push', 'gcr.io/e-analogy-384607/test-ci:$COMMIT_SHA']
+  - name: gcr.io/cloud-builders/gcloud
+    args: ['gcloud', 'run', 'deploy', 'test-ci', '--region=europe-west1', '--platform=managed', '--image=gcr.io/e-analogy-384607/test-ci:$COMMIT_SHA']
